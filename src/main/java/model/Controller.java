@@ -164,7 +164,7 @@ public class Controller {
 
             String password = view.getUserInput("password");
             model.validateUser(userName, password);
-            if(model.getIsLogged() == true) {
+            if(model.getIsLogged()) {
                 view.displayMessage(String.format("You log in as %s", model.getLoggedUser()));
                 break;
             }
@@ -172,7 +172,7 @@ public class Controller {
                 view.displayMessage("password or username is incorrect");
                 view.displayMenuIncorrectData();
                 String input = view.getUserInput("Choose option");
-                if(input.equals("1")) {
+                if("1".equals(input)) {
                     break;
                 }
                 if(input.equals("2")) {
